@@ -1,9 +1,11 @@
 package com.sawepeter.kfg;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -74,13 +76,44 @@ public class WelcomeActivity extends AppCompatActivity {
                 //checking for the last page
                 //if last page home screen will be launched
                 int current = getItem(+1);
-                if (current  < layouts.length) {
+                if (current < layouts.length) {
                     //move to next screen
                     viewPager.setCurrentItem(current);
-            } else {
+                } else {
                     launchHomeScreen();
                 }
+            }
         });
         }
+
+        private void addBottomDots(int currentPage) {
+            dots = new TextView[layouts.length];
+            int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
+            int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
+
+            dotslayout.removeAllViews();
+            for (int i=0; i < dots.length; i++) {
+                dots[i] = new TextView(this);
+                dots[i].setText(Html.fromHtml("&#8226;"));
+                dots[i].setTextSize(35);
+                dots[i].setTextColor(colorsInactive[currentPage]);
+                dotslayout.addView(dots[i]);
+            }
+
+            if (dots.length > 0)
+                dots[currentPage].setTextColor(colorsActive[currentPage]);
     }
+
+    private int getItem(int i){
+        return viewPager.getCurrentItem() + i;
+    }
+
+    private int launchHomeScreen(){
+        prefManager.setIsFirstTimeLaunch(false);
+        startActivity(new Intent(WelcomeActivity.this, intro.class));
+        finish();
+    }
+
+    //viewpager change listener
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager
 }
