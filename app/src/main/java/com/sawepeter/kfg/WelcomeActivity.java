@@ -1,5 +1,6 @@
 package com.sawepeter.kfg;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -8,7 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -156,15 +159,34 @@ public class WelcomeActivity extends AppCompatActivity {
     }
     //view pager adapter
     public class MyViewPagerAdapter  extends PagerAdapter {
+        private LayoutInflater layoutInflater;
+
+        public MyViewPagerAdapter() {
+
+        }
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = layoutInflater.inflate(layouts[position],container,false);
+            container.addView(view);
+
+            return view;
+        }
 
         @Override
         public int getCount() {
-            return 0;
+            return layouts.length;
         }
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return false;
+            return view == obj;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            View view = (View) object;
+            container.removeView(view);
         }
     }
 }
