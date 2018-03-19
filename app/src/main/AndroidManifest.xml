@@ -9,11 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".intro">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/AppTheme.NoActionBar"
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".WelcomeActivity"></activity>
             <intent-filter>
