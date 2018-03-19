@@ -108,12 +108,40 @@ public class WelcomeActivity extends AppCompatActivity {
         return viewPager.getCurrentItem() + i;
     }
 
-    private int launchHomeScreen(){
+    private void launchHomeScreen(){
         prefManager.setIsFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, intro.class));
         finish();
     }
 
     //viewpager change listener
-    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager
+    ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            addBottomDots(position);
+            //changing the next button text 'NEXT' / 'GOT IT'
+            if (position == layouts.length - 1){
+                //last page make  button text to got it
+                btnNext.setText(getString(R.string.start));
+                btnSkip.setVisibility(View.GONE);
+            } else {
+                //still pages are left
+                btnNext.setText(getString(R.string.next));
+                btnSkip.setVisibility(View.VISIBLE);
+            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
+    //make the notification bar transparent
+    
 }
