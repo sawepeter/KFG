@@ -44,6 +44,43 @@ public class WelcomeActivity extends AppCompatActivity {
 
 
         //layouts of all welcome sliders
-        
+        layouts = new int[]{
+                R.layout.welcome_slide1,
+                R.layout.welcome_slide2,
+                R.layout.welcome_slide3,
+                R.layout.welcome_slide4};
+
+        //adding bottom dots
+        addBottomDots(0);
+
+        //making notification bar transparent
+        changeStatusBarColor();
+
+        myViewPagerAdapter = new MyViewPagerAdapter();
+        viewPager.setAdapter(myViewPagerAdapter);
+        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+        btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchHomeScreen();
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                //checking for the last page
+                //if last page home screen will be launched
+                int current = getItem(+1);
+                if (current  < layouts.length) {
+                    //move to next screen
+                    viewPager.setCurrentItem(current);
+            } else {
+                    launchHomeScreen();
+                }
+        });
+        }
     }
 }
