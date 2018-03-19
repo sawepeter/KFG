@@ -1,3 +1,5 @@
+package com.sawepeter.kfg;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
