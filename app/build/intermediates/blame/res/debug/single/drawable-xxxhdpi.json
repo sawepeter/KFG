@@ -4,12 +4,12 @@
         "source": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_travel.png"
     },
     {
-        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_discount.png",
-        "source": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_discount.png"
-    },
-    {
         "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_food.png",
         "source": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_food.png"
+    },
+    {
+        "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_discount.png",
+        "source": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_discount.png"
     },
     {
         "merged": "C:\\Users\\SAWE PETER\\AndroidStudioProjects\\KFG\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_movie.png",

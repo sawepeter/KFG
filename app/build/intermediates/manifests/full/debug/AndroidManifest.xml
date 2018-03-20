@@ -15,13 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.sawepeter.kfg.intro" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_welcome"
+            android:theme="@style/AppTheme.NoActionBar"
         </activity>
         <activity android:name="com.sawepeter.kfg.WelcomeActivity" />
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
     </application>
 
 </manifest>

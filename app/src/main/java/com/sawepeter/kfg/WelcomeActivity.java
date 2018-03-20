@@ -24,6 +24,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotslayout;
     private TextView[] dots;
+    private int[] layouts;
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
 
@@ -180,7 +181,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         @Override
         public boolean isViewFromObject(View view, Object object) {
-            return view == obj;
+            return view == object;
         }
 
         @Override
